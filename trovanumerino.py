@@ -52,10 +52,11 @@ def check_valid(expr, expected_result):
 # check_valid([3, 2, '*', 11, '-'], -5)
 # check_valid([2, 5, '*', 4, '+', 3, 2, '*', 1, '+', '/'], 2)
 
-# check_valid([1, 1, 1, 1, '+', '+', '+'], 4)
-# check_valid([1, 1, 1, '+', 1, '+', '+'], 4)
-# check_valid([1, 1, '+', 1, 1, '+', '+'], 4)
-# check_valid([1, 1, '+', 1, '+', 1, '+'], 4)
+check_valid([1, 1, 1, 1, '+', '+', '+'], 4)
+check_valid([1, 1, 1, '+', 1, '+', '+'], 4)
+check_valid([1, 1, 1, '+', '+', 1, '+'], 4)
+check_valid([1, 1, '+', 1, 1, '+', '+'], 4)
+check_valid([1, 1, '+', 1, '+', 1, '+'], 4)
 
 
 def permutation(list):
@@ -99,6 +100,7 @@ for i in operands_permutations:
     for j in operators_combinations:
         rpn([ i[0], i[1], i[2], i[3], j[0], j[1], j[2] ])
         rpn([ i[0], i[1], i[2], j[0], i[3], j[1], j[2] ])
+        rpn([ i[0], i[1], i[2], j[0], j[1], i[3], j[2] ])
         rpn([ i[0], i[1], j[0], i[2], i[3], j[1], j[2] ])
         rpn([ i[0], i[1], j[0], i[2], j[1], i[3], j[2] ])
         
